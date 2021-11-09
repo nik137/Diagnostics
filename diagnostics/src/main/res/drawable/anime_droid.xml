@@ -1,0 +1,68 @@
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:drawable="@drawable/android_svg"
+    tools:targetApi="lollipop">
+
+    <target android:name="right_hand">
+      <aapt:attr name="android:animation">
+
+
+          <objectAnimator
+               android:duration="1000"
+               android:propertyName="pathData"
+               android:valueFrom="m140.93,112.89c-3.34,0 -6.04,2.36 -6.04,5.26 0,2.91 2.7,5.26 6.04,5.26 1.39,0 2.52,0.99 2.52,2.2l0,29.08c0,1.21 -1.13,2.2 -2.52,2.2 -3.34,0 -6.04,2.35 -6.04,5.26 0,2.91 2.7,5.26 6.04,5.26 8.05,0 14.6,-5.71 14.6,-12.72l0,-29.08c0,-7.01 -6.55,-12.72 -14.6,-12.72z"
+               android:valueTo=  "m140.93,69.89c-3.34,0 -6.04,2.36 -6.04,5.26 0,2.91 2.7,5.26 6.04,5.26 1.39,0 2.52,0.99 2.52,2.2l0,29.08c0,1.21 -1.13,2.2 -2.52,2.2 -3.34,0 -6.04,2.35 -6.04,5.26 0,2.91 2.7,5.26 6.04,5.26 8.05,0 14.6,-5.71 14.6,-12.72l0,-29.08c0,-7.01 -6.55,-12.72 -14.6,-12.72z"
+               android:valueType="pathType"
+               tools:targetApi="lollipop" />
+       </aapt:attr>
+    </target>
+
+    <target android:name="arrow">
+        <aapt:attr name="android:animation">
+            <set android:ordering="sequentially">
+                <objectAnimator
+                    android:duration="1000"
+                    android:propertyName="pathData"
+                    android:valueFrom="M 47.30268,56.147897 37.688314,45.379807"
+                    android:valueTo=  "M 47.30268,56.147897 37.688314,45.379807"
+                    android:valueType="pathType"
+                    tools:targetApi="lollipop" />
+                <objectAnimator
+                    android:duration="1000"
+                    android:propertyName="pathData"
+                    android:valueFrom="M 47.30268,56.147897 37.688314,45.379807"
+                    android:valueTo=  "M 47.30268,56.147897 57.686195,45.187519"
+                    android:valueType="pathType"
+                    tools:targetApi="lollipop" />
+            </set>
+
+        </aapt:attr>
+    </target>
+
+    <target android:name="diagnostics">
+        <aapt:attr name="android:animation">
+            <set android:ordering="sequentially">
+
+            <objectAnimator
+                android:duration="2000"
+                android:interpolator="@android:interpolator/fast_out_linear_in"
+                android:propertyName="trimPathEnd"
+                android:valueFrom="0"
+                android:valueTo="0"
+                tools:targetApi="lollipop" />
+
+
+            <objectAnimator
+                android:duration="2000"
+                android:interpolator="@android:interpolator/fast_out_linear_in"
+                android:propertyName="trimPathEnd"
+                android:valueFrom="0"
+                android:valueTo="1"
+                tools:targetApi="lollipop" />
+            </set>
+        </aapt:attr>
+    </target>
+
+</animated-vector>
