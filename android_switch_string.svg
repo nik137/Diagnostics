@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="android-logo-svgrepo-com_2.svg"
+   xml:space="preserve"
+   style="enable-background:new 0 0 206.132 206.132;"
+   viewBox="0 0 206.132 206.132"
+   y="0px"
+   x="0px"
+   id="Capa_1"
+   version="1.1"
+   inkscape:version="0.92.1 r15371">
+   <defs> 
+    <clipPath id="logo"> <!-- Для рисования слова -->
+      <path d="m 38.199408,169.45673 c 5.409985,-14.77784 -3.058305,-38.29991 -14.731497,-32.09279 -2.791944,8.48583 -3.526384,41.24239 1.302084,44.88309 6.265508,4.22006 16.673068,-19.9946 19.291478,-30.86606 0.431405,-1.79116 -1.149152,18.64927 -1.777328,24.34768 21.525233,-8.45403 8.846989,-29.07606 7.027001,-24.88383 -6.680961,12.20909 -1.481694,21.63557 2.516769,19.66269 6.773716,-3.34223 2.600006,-27.40204 1.44814,-24.51781 -3.030721,7.5888 7.053561,23.50265 7.292759,20.02523 4.300752,-62.52371 11.486114,18.49952 -0.560859,27.66772 -2.689778,2.04702 14.171466,-59.39391 12.539009,-52.50969 -1.244846,5.24962 -2.713986,14.39213 -1.323941,15.78145 9.120322,-35.39312 2.604912,3.23415 7.281575,0.55663 24.567892,-14.06583 -11.836032,-28.58509 5.165742,-1.22891 0.702093,1.12968 4.729505,-0.52943 4.508251,-3.9283 -0.08418,-1.29322 17.260979,5.22446 3.89843,-7.60224 -9.23839,-8.86792 -2.271709,-10.25755 6.658723,-6.26613 10.561766,4.72053 0.724912,-26.51359 1.300636,10.01863 0.13506,8.56967 9.48007,-10.53466 7.67637,-19.45419 -0.6651,-3.289 1.85254,18.56444 1.62181,16.51599 -1.04411,-9.2699 24.09608,-24.62823 12.23086,-17.4953 -4.42945,2.66282 -19.84019,17.51757 -2.0818,14.38028 9.89542,-1.74818 7.85044,-3.22721 3.83254,-6.44263 -5.98495,-4.78959 4.97751,-11.49063 6.57888,-3.7225"/>
+    </clipPath>
+   
+	<style> <!-- Здесь используем CSS -->
+	.pen {    <!-- Это класс, что бы скрыть слово при отображении svg -->
+	 stroke-dasharray:  700;
+	 stroke-dashoffset: 700;
+   }
+  @keyframes myAnime {
+	<!-- Перемещение руки вверх -->
+	0% {   <!-- Начальное положение --> 
+		transform-origin: 0% 0%;   
+		transform: translateY( 0px )
+    }
+	 
+	50% {  <!-- То что в процессе --> 
+		transform-origin: 0% 0%;   
+		transform: translateY( -80px )
+    }
+	
+	100% { <!-- Окончательное положение --> 
+		transform-origin: 0% 0%;   
+		transform: translateY( 0px )
+    }
+  }
+
+  <!-- Смена цвета кнопки -->
+  @keyframes myAnimeButton{
+    0% { fill: red; }
+    75% { fill: red; }
+    100% { fill: red; }
+  }
+  
+ @keyframes  myAnimeArrow{
+    0% { 
+	    transform: rotate(0deg) 
+	   }
+    50% { 
+         transform: rotate(70deg) translateY( -10px) 
+	   }
+    100% { 
+		transform: rotate(70deg) translateY( -10px )
+	   }
+  }
+  <!-- Самый простой вариант, когда у нас есть только два ключевых кадра — исходное и конечное состояние -->
+  @keyframes draw {
+	from {
+		stroke-dashoffset: 700;
+	}
+	to {
+		stroke-dashoffset: 0;
+	}
+  }
+  
+   #Capa_1.addAnimation #Hand {
+    animation: myAnime 1.5s ease-out;
+  }
+  
+   #Capa_1.addAnimation #Button {
+    animation: myAnimeButton 5s ease-out 0.7s;
+  }
+  
+   #Capa_1.addAnimation #Arrow {
+   transform-origin: bottom ;  <!--Устанавливает координаты точки, относительно которой будет происходить трансформация элемента. Y -->
+   transform-box: fill-box;
+   animation: myAnimeArrow 4s ease-out 0.8s;
+  }
+  
+  #Capa_1.addAnimation #String {
+  fill: green;
+  stroke: red;
+  stroke-width: 18px;
+  stroke-linecap: round;
+  clip-path: url(#logo);
+
+  stroke-dasharray: 700;
+  stroke-dashoffset: 700;
+  animation-duration: 5s;
+  
+  animation-delay: 4s
+  <!--animation-iteration-count: infinite; -->
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-name: draw;
+  }
+  </style>
+  <script> <!-- Здесь вставляем JavaScript -->
+  <!-- Функция отраба тывает по клику -->
+  var myAnimeClick = document.getElementById('Capa_1');
+   myAnimeClick.addEventListener('click', function(){
+  this.classList.toggle('addAnimation');
+});
+
+<!-- Вычисление длины рисуемого слова, что б использовать технологию dash. У меня не заработало, подобрал в вручную -->
+function TotalLength(){
+          var path = document.querySelector('#path43');
+        var len = Math.round(path.getTotalLength() );
+        alert("Длина пути - " + len);
+        };
+  </script>
+</defs>
+   <metadata
+     id="metadata59"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+     id="defs57"><inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 103.066 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="206.132 : 103.066 : 1"
+       inkscape:persp3d-origin="103.066 : 68.710667 : 1"
+       id="perspective3733" /></defs><sodipodi:namedview
+     inkscape:current-layer="Capa_1"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-8"
+     inkscape:window-x="-8"
+     inkscape:cy="108.31252"
+     inkscape:cx="89.390365"
+     inkscape:zoom="1.8386724"
+     showgrid="false"
+     id="namedview55"
+     inkscape:window-height="705"
+     inkscape:window-width="1366"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     inkscape:measure-start="47.3027,152.292"
+     inkscape:measure-end="35.7654,166.905" /><g
+     id="g22"
+     transform="matrix(0.80532172,0,0,0.70149309,3.3356177,61.531826)"><path 
+       d="m 51.793,75.995 h 102.543 c 2.124,0 4.147,-0.9 5.569,-2.477 1.422,-1.577 2.109,-3.684 1.891,-5.795 -1.797,-17.368 -10.939,-32.265 -24.16,-41.789 l 9.197,-14.397 c 2.23,-3.49 1.208,-8.128 -2.283,-10.357 -3.492,-2.229 -8.129,-1.209 -10.358,2.283 l -9.776,15.304 c -6.632,-2.557 -13.835,-3.955 -21.352,-3.955 -7.517,0 -14.718,1.398 -21.35,3.955 L 71.938,3.464 C 69.708,-0.028 65.068,-1.049 61.58,1.181 58.089,3.41 57.067,8.048 59.297,11.538 l 9.196,14.396 C 55.272,35.458 46.13,50.355 44.332,67.723 c -0.219,2.112 0.468,4.219 1.89,5.795 1.423,1.577 3.447,2.477 5.571,2.477 z M 81.916,35.182 c 0.35,-0.153 0.693,-0.331 1.025,-0.542 6.043,-3.091 12.887,-4.828 20.123,-4.828 7.244,0 14.093,1.741 20.142,4.837 0.326,0.206 0.662,0.382 1.004,0.532 9.973,5.436 17.628,14.62 21.008,25.813 H 60.911 C 64.291,49.803 71.945,40.619 81.916,35.182 Z"
+       id="path10"
+       inkscape:connector-curvature="0" /><path 
+       d="m 154.336,88.94 c -4.142,0 -7.5,3.357 -7.5,7.5 v 52.281 c 0,2.248 -1.899,4.147 -4.147,4.147 H 63.441 c -2.248,0 -4.148,-1.899 -4.148,-4.147 V 96.44 c 0,-4.143 -3.358,-7.5 -7.5,-7.5 -4.142,0 -7.5,3.357 -7.5,7.5 v 52.281 c 0,10.558 8.59,19.147 19.148,19.147 h 79.248 c 10.558,0 19.147,-8.59 19.147,-19.147 V 96.44 c 0,-4.142 -3.358,-7.5 -7.5,-7.5 z"
+       id="path12"
+       inkscape:connector-curvature="0" /><path 
+       d="m 35.269,88.211 c 4.142,0 7.5,-3.357 7.5,-7.5 0,-4.142 -3.358,-7.5 -7.5,-7.5 -10,0 -18.135,8.135 -18.135,18.134 v 41.45 c 0,9.999 8.135,18.134 18.135,18.134 4.142,0 7.5,-3.357 7.5,-7.5 0,-4.143 -3.358,-7.5 -7.5,-7.5 -1.729,0 -3.135,-1.406 -3.135,-3.134 v -41.45 c 10e-4,-1.728 1.407,-3.134 3.135,-3.134 z"
+       id="path14"
+       inkscape:connector-curvature="0" />
+	   <!--Hand--> <path  
+       d="m 170.862,73.211 c -4.142,0 -7.5,3.358 -7.5,7.5 0,4.143 3.358,7.5 7.5,7.5 1.729,0 3.135,1.406 3.135,3.134 v 41.45 c 0,1.728 -1.406,3.134 -3.135,3.134 -4.142,0 -7.5,3.357 -7.5,7.5 0,4.143 3.358,7.5 7.5,7.5 9.999,0 18.135,-8.135 18.135,-18.134 v -41.45 c 0,-9.999 -8.135,-18.134 -18.135,-18.134"
+       id="Hand"
+       inkscape:connector-curvature="0" /><path
+       d="m 94.31,180.497 c -4.142,0 -7.5,3.357 -7.5,7.5 0,1.729 -1.406,3.135 -3.135,3.135 -1.729,0 -3.135,-1.406 -3.135,-3.135 0,-4.143 -3.358,-7.5 -7.5,-7.5 -4.142,0 -7.5,3.357 -7.5,7.5 0,10 8.135,18.135 18.135,18.135 10,0 18.135,-8.135 18.135,-18.135 0,-4.143 -3.357,-7.5 -7.5,-7.5 z"
+       id="path18"
+       inkscape:connector-curvature="0" /><path
+       d="m 133.09,180.497 c -4.142,0 -7.5,3.357 -7.5,7.5 0,1.729 -1.406,3.135 -3.135,3.135 -1.729,0 -3.137,-1.406 -3.137,-3.135 0,-4.143 -3.358,-7.5 -7.5,-7.5 -4.142,0 -7.5,3.357 -7.5,7.5 0,10 8.136,18.135 18.137,18.135 9.999,0 18.135,-8.135 18.135,-18.135 0,-4.143 -3.358,-7.5 -7.5,-7.5 z"
+       id="path20"
+       inkscape:connector-curvature="0" /></g><g
+     id="g24"
+     transform="matrix(0.80532172,0,0,0.70149309,3.3356177,61.531826)" /><g
+     id="g26"
+     transform="matrix(0.80532172,0,0,0.70149309,3.3356177,61.531826)" /><g
+     id="g28"
+     transform="matrix(0.80532172,0,0,0.70149309,3.3356177,61.531826)" /><g
+     id="g30"
+     transform="matrix(0.80532172,0,0,0.70149309,3.3356177,61.531826)" /><g
+     id="g32"
+     transform="matrix(0.80532172,0,0,0.70149309,3.3356177,61.531826)" /><g
+     id="g34"
+     transform="matrix(0.80532172,0,0,0.70149309,3.3356177,61.531826)" /><g
+     id="g36"
+     transform="matrix(0.80532172,0,0,0.70149309,3.3356177,61.531826)" /><g
+     id="g38"
+     transform="matrix(0.80532172,0,0,0.70149309,3.3356177,61.531826)" /><g
+     id="g40"
+     transform="matrix(0.80532172,0,0,0.70149309,3.3356177,61.531826)" /><g
+     id="g42"
+     transform="matrix(0.80532172,0,0,0.70149309,3.3356177,61.531826)" /><g
+     id="g44"
+     transform="matrix(0.80532172,0,0,0.70149309,3.3356177,61.531826)" /><g
+     id="g46"
+     transform="matrix(0.80532172,0,0,0.70149309,3.3356177,61.531826)" /><g
+     id="g48"
+     transform="matrix(0.80532172,0,0,0.70149309,3.3356177,61.531826)" /><g
+     id="g50"
+     transform="matrix(0.80532172,0,0,0.70149309,3.3356177,61.531826)" /><g
+     id="g52"
+     transform="matrix(0.80532172,0,0,0.70149309,3.3356177,61.531826)" />
+	  <path style="fill:green;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="M130.86,70.68 a6.43,6.8 0,1 0,12.85 0a6.43,6.8 0,1 0,-12.85 0z"
+     id="Button" 
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cccc" /> <!-- Button -->
+      <path style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="M 25.381926,31.919695 8.8452166,20.76703 9.6143659,169.59741 23.843628,184.21125"
+     id="path3761"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cccc" /><path
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="M 8.8452166,20.76703 130.75538,6.5377688 l 18.075,9.2297912"
+     id="path3763"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccc" /><path
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="M 23.843628,184.21125 25.381926,31.919695 149.21496,15.76756 h -0.38458 l -0.38457,151.5224 z"
+     id="path3770"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cccccc" /><path
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 31.53512,40.764911 0,21.151605 32.304269,-4.614895 -0.384575,-21.151605 z"
+     id="path3772"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccc" /><path 
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 33.073419,45.764381 4.614895,4.614896"
+     id="path3776"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" /><path
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 41.53406,41.53406 0.769149,4.99947"
+     id="path3778"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+     <path style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 57.30162,38.457463 c -1.538298,5.76862 -1.922873,5.384045 -1.922873,5.384045"
+     id="path3782"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" /><path
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 62.685665,44.226083 c -3.845746,4.614896 -3.845746,4.614896 -3.845746,4.614896"
+     id="path3784"
+     inkscape:connector-curvature="0" /><path
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 48.840978,40.380337 c 0,5.384045 0,5.384045 0,5.384045"
+     id="path3786"
+     inkscape:connector-curvature="0" /><path 
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="M 47.30268,56.147897 37.688314,45.379807"
+     id="Arrow" 
+     inkscape:connector-curvature="0" /> <!-- Arrow -->
+	 <path
+     style="fill:none;stroke:blue;stroke-width:3px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 38.199408,169.45673 c 5.409985,-14.77784 -3.058305,-38.29991 -14.731497,-32.09279 -2.791944,8.48583 -3.526384,41.24239 1.302084,44.88309 6.265508,4.22006 16.673068,-19.9946 19.291478,-30.86606 0.431405,-1.79116 -1.149152,18.64927 -1.777328,24.34768 21.525233,-8.45403 8.846989,-29.07606 7.027001,-24.88383 -6.680961,12.20909 -1.481694,21.63557 2.516769,19.66269 6.773716,-3.34223 2.600006,-27.40204 1.44814,-24.51781 -3.030721,7.5888 7.053561,23.50265 7.292759,20.02523 4.300752,-62.52371 11.486114,18.49952 -0.560859,27.66772 -2.689778,2.04702 14.171466,-59.39391 12.539009,-52.50969 -1.244846,5.24962 -2.713986,14.39213 -1.323941,15.78145 9.120322,-35.39312 2.604912,3.23415 7.281575,0.55663 24.567892,-14.06583 -11.836032,-28.58509 5.165742,-1.22891 0.702093,1.12968 4.729505,-0.52943 4.508251,-3.9283 -0.08418,-1.29322 17.260979,5.22446 3.89843,-7.60224 -9.23839,-8.86792 -2.271709,-10.25755 6.658723,-6.26613 10.561766,4.72053 0.724912,-26.51359 1.300636,10.01863 0.13506,8.56967 9.48007,-10.53466 7.67637,-19.45419 -0.6651,-3.289 1.85254,18.56444 1.62181,16.51599 -1.04411,-9.2699 24.09608,-24.62823 12.23086,-17.4953 -4.42945,2.66282 -19.84019,17.51757 -2.0818,14.38028 9.89542,-1.74818 7.85044,-3.22721 3.83254,-6.44263 -5.98495,-4.78959 4.97751,-11.49063 6.57888,-3.7225"
+     class = "pen"  
+	 id="String"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cccsccssssscsssssssssssc" /> <!-- String вываод используя технику dash -->
+
+</svg>
