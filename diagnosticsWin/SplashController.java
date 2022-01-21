@@ -10,9 +10,8 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 
 public class SplashController implements Initializable {
-
     @FXML
-    private StackPane rootPane;
+    public StackPane rootPane;
     
     @FXML private WebView webView; 
     /* Объект управляющий и отображающий содержимое WebEngine. Т.е.embedded browser 
@@ -24,8 +23,7 @@ public class SplashController implements Initializable {
     
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-    	
+    public void initialize(URL url, ResourceBundle rb) {   	
     	webEngine = webView.getEngine(); // Получить объект WebEngine из WebView используя метод getEngine().
         URL url1 = getClass().getResource("/android_switch_string.svg");
         webEngine.load(url1.toExternalForm()); //Запуск анимации, происанной через CSS and JavaScript.
