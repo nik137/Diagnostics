@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.web.*?>
+
+<AnchorPane fx:id="rootMain" prefHeight="622.0" prefWidth="797.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="diagnosticsWin.MainSceneController">
+   <children>
+     <AnchorPane id="AnchorPane" fx:id="root"  prefHeight="613.0" prefWidth="783.0">
+        <children>
+            <WebView fx:id="browser"  prefHeight="613.0" prefWidth="783.0">
+               <cursor>
+                  <Cursor fx:constant="NW_RESIZE" />
+               </cursor>
+            </WebView>
+        </children>
+       
+      </AnchorPane>
+         
+   </children>
+</AnchorPane>
