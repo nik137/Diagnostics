@@ -11,17 +11,18 @@ public class Main extends Application {
     public static Boolean isSplashLoaded = false;
     @Override
     public void start(Stage stage) throws IOException { 
-    	/*FXMLLoader - cоздает экземпляр соответствующего контроллера (заданный в FXMLфайле через fx:controller), вызывая первый конструктор по умолчанию , а затем initialize*/
+    	/*FXMLLoader - creates an instance of the corresponding controller (specified in the FXML file via fx:controller),
+         *calling the first default constructor and then initialize*/
         Parent root = FXMLLoader.load(getClass().getResource("/main.fxml"));
-        /*отображает содержание сцены (stage)*/
+        /*Displays the contents of the stage (stage)*/
         Scene scene = new Scene(root);
-        /*загружаем компоненты в окно*/
+        /*Loading components into the window*/
         stage.setScene(scene); 
         stage.setTitle("Genuine Coder"); 
-        /*Stage отображается на экране устройства.*/
+        /*Stage is displayed on the device screen.*/
         stage.show(); 
     }
-    /*Метод launch запускает приложение JavaFX. После этого вызывается метод start*/
+    /*The "launch" method starts the JavaFX application. After that, the "start" method is called*/
     public static void main(String[] args) {
         launch(args);
     }      

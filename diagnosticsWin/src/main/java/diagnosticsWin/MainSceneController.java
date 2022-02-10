@@ -27,9 +27,7 @@ import javafx.scene.web.WebView;
 import javafx.util.Duration;
 import netscape.javascript.JSObject;
 
-/*
- *restriction ограничение на подавление предупреждений об использовании нерекомендуемых или запрещенных ссылок
- * */
+/*"restriction" restriction to suppress warnings about the use of deprecated or prohibited links*/
 @SuppressWarnings("restriction")
 public class MainSceneController implements Initializable {
 	
@@ -41,13 +39,13 @@ public class MainSceneController implements Initializable {
     int answer_id = 0;
     boolean iclick = false;
 	
-    /*Храним мост в переменной  чтобы избежать Java GC*/
+    /*Store the bridge in a variable to avoid Java GC*/
 	private Bridge jl = new Bridge();
 	
 	
    public class Bridge { 
 	   
-       public String elementId() {    // отправляем обратно в свг
+       public String elementId() {    //Send back to svg
            System.out.println("receive id");
            return  numberID;
        }
@@ -55,7 +53,7 @@ public class MainSceneController implements Initializable {
        public String elementIdText() {
     	   if (numberID.startsWith("tspan")) {
     		   String answer = "Java Callback";
-    		   iclick = true;   // флаг, который разрешает вывод контекстного меню
+    		   iclick = true;        //Flag that allows the context menu to be displayed
     		   answer+=' '+ numberID;
     		   return answer;
     	   } 
@@ -68,41 +66,40 @@ public class MainSceneController implements Initializable {
    	
 	@FXML
 	private AnchorPane root;
-	//Обращение по имени 
+	//Address by name 
 	@FXML
     private Button mainButton;
 	    
 	    private WebEngine webEngine; 
 	
-      /*Инициализация элементов управления*/
-	  public void initialize(URL location, ResourceBundle resources) {// initialize()для инициализации любых элементов управления
+      /*Control initialization*/
+	  public void initialize(URL location, ResourceBundle resources) {//"initialize()" to initialize any controls
 	        if (!Main.isSplashLoaded) {
 	            loadSplashScreen();        
 	        }
 	        
 
-	       /*Получаем объект WebEngine из WebView используя метод getEngine().*/
+	       /*Get the "WebEngine" object from the "WebView" using the "getEngine()" method*/
 	       webEngine = browser.getEngine(); 
 	       URL url = getClass().getResource("/function.svg");
 	       webEngine.load(url.toExternalForm()); 
 	       
-	       /* getLoadWorker - Возвращает объект Worker, который отслеживает прогресса загрузки.После устанавливаем ссылку JSObject на «объект окна».
-	        * jsobj теперь равен объекту окна, который представляет открытое окно в браузере  
-	        * */
+	       /* getLoadWorker - Returns a "Worker" object that tracks the progress of loading. After that, we set the "JSObject"
+	        * reference to the "window object". "jsobj" is now equal to the window object which represents the open window in the browser */
 	       browser.getEngine().getLoadWorker().stateProperty().addListener(new ChangeListener<State>() {  
 	           @Override
 	           public void changed(ObservableValue ov, State oldState, State newState) {
 	               if (newState == Worker.State.SUCCEEDED) {
 	                   System.out.println("READY");
 	                   JSObject jsobj = (JSObject) browser.getEngine().executeScript("window");
-	                   /*Устанавливаем член объекта в JavaScript. Т.е. обращаемся из JavaScript к функции Java*/
+	                   /*Set an object member in JavaScript. Those accessing a Java function from JavaScript*/
 	                   jsobj.setMember("bridge", jl);
 	               }
 	           }
 	       });
 	      
 	       /*
-	        * Прослушиватель сообщений из консоли WEB - import com.sun.javafx.webkit.WebConsoleListener
+	        *Console message listener WEB - import com.sun.javafx.webkit.WebConsoleListener
 	        */
 	       WebConsoleListener.setDefaultListener((webView, message, lineNumber, sourceId) -> {
 	     	    System.out.println(message + "[at " + lineNumber + "]");
@@ -112,15 +109,12 @@ public class MainSceneController implements Initializable {
 	         /*Disable the default context menu*/
 	         browser.setContextMenuEnabled(false);
 	         
-	         /*Подключаем свое меню*/
-	         createContextMenu(browser); // подключаем свое кастомное меню
+	         /*We connect our menu*/
+	         createContextMenu(browser); // Connect your custom menu
 	  }
 	  	  
 	  
-	   /* 
-	    * Кастомное контекстное меню. С обрабочтком события по клику правой кнопкой мыши
-	    * и левой двойным щелчком. 
-	    */
+	   /* Custom context menu. With right click event handling and left double click. */
 	   private void createContextMenu(WebView webView) {
 	       ContextMenu contextMenu = new ContextMenu();
 	       ContextMenu contextMenu2 = new ContextMenu();
@@ -154,7 +148,7 @@ public class MainSceneController implements Initializable {
 	   }
 	   
 	  
-	  /*Анимация окна загрузки с затуханием*/ 
+	  /*Fade loading window animation*/ 
 	  private void loadSplashScreen() {
 	        try {
 	            Main.isSplashLoaded = true;

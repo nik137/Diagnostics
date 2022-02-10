@@ -16,9 +16,8 @@
                   <Cursor fx:constant="NW_RESIZE" />
                </cursor>
             </WebView>
+            <fx:include source="menu.fxml" /> 
         </children>
-       
       </AnchorPane>
-         
    </children>
 </AnchorPane>

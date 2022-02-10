@@ -14,18 +14,18 @@ public class SplashController implements Initializable {
     public StackPane rootPane;
     
     @FXML private WebView webView; 
-    /* Объект управляющий и отображающий содержимое WebEngine. Т.е.embedded browser 
-     * в приложение JavaFX. Основан на WebKit, поддерживает CSS, JavaScript, DOM и HTML5.
-     * Обрабатывает события мыши и некоторые события клавиатуры*/
+    /* An object that manages and displays the content of the "WebEngine". Those. embedded browser
+     * to a JavaFX application. Based on "WebKit", supports CSS, JavaScript, DOM and HTML5.
+     * Handles mouse events and some keyboard events*/
     private WebEngine webEngine; 
-    /*Объект непосредственно загружает веб-страницу и поддерживает основные веб-свойства 
-     * загрузки содержания HTML и доступ в DOM так же выполняет команды JavaScript*/
+    /* The object directly loads a web page and maintains basic web properties
+     * loading HTML content and accessing the DOM also executes JavaScript commands*/
     
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {   	
-    	webEngine = webView.getEngine(); // Получить объект WebEngine из WebView используя метод getEngine().
+    	webEngine = webView.getEngine(); // Get the WebEngine object from the WebView using the getEngine() method.
         URL url1 = getClass().getResource("/android_switch_string.svg");
-        webEngine.load(url1.toExternalForm()); //Запуск анимации, происанной через CSS and JavaScript.
+        webEngine.load(url1.toExternalForm()); //Triggering an animation written with CSS and JavaScript.
     }
 }
