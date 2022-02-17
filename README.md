@@ -10,3 +10,6 @@ The project consists:
 
   - Step 3 - Interactive SVG in a Java application via JavaScript.(https://www.ap-impulse.com/java-and-javascript-control-step-107/)
 <img src="https://www.ap-impulse.com/wp-content/uploads/2022/01/ApplicationJavaFX.gif" width="250">
+ 
+  - Step 4 - Adding a menu and context menu to an application. Their processing. Nesting fxml files.(https://www.ap-impulse.com/java-fx-menu-nested-fxml-step-108/)
+<img src="https://www.ap-impulse.com/wp-content/uploads/2022/02/Menu.jpg" width="250"> 
