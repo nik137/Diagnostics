@@ -3,11 +3,15 @@ package diagnosticsWin;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.sun.javafx.webkit.WebConsoleListener; 
+import com.sun.javafx.webkit.WebConsoleListener;
+
 import javafx.animation.FadeTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -31,6 +35,18 @@ import netscape.javascript.JSObject;
 @SuppressWarnings("restriction")
 public class MainSceneController implements Initializable {
 	
+	List<String> indValue =  new ArrayList<>();
+	Collection<Valuelist> peopleList =  new ArrayList<>();
+	ValuesApplication valuesappl = new ValuesApplication();  
+	Valuelist val = new Valuelist();
+	String answer = null;
+	String answer_id_svg = null;
+	List <MenuItem> listValueMenu;
+	  
+	/*To populate a menu with variables*/
+	private MenuItem it0,it1,it2,it3,it4,it5,it6,it7,it8,it9,it10,it11,it12,it13,it14,it15,it16,it17,it18,it19,it20;
+	MenuItem[] valueitems = {it0,it1,it2,it3,it4,it5,it6,it7,it8,it9,it10,it11,it12,it13,it14,it15,it16,it17,it18,it19,it20};
+			
 	public String numberID = "";
 	
 	@FXML
@@ -42,26 +58,29 @@ public class MainSceneController implements Initializable {
     /*Store the bridge in a variable to avoid Java GC*/
 	private Bridge jl = new Bridge();
 	
-	
-   public class Bridge { 
-	   
+    public class Bridge { 
        public String elementId() {    //Send back to svg
            System.out.println("receive id");
            return  numberID;
-       }
+       }   
        
-       public String elementIdText() {
+       public String elementIdText() {  
     	   if (numberID.startsWith("tspan")) {
-    		   String answer = "Java Callback";
-    		   iclick = true;        //Flag that allows the context menu to be displayed
-    		   answer+=' '+ numberID;
+    		   /*Flag that allows the context menu to be displayed*/
+    		   iclick = true;  
+    		   answer_id_svg = numberID;
     		   return answer;
     	   } 
     	   return "Finish";
        }
+       
+       public String Id_Text() {	   
+    	   answer_id++;
+		   return Integer.toString(answer_id);
+       }
    }
    
-   @FXML
+    @FXML
 	private AnchorPane rootMain;
    	
 	@FXML
@@ -106,6 +125,20 @@ public class MainSceneController implements Initializable {
 	     	    numberID =  message;
 	     	});
 	       
+	       //-----------------------------------------------------------------------------
+           valuesappl.addElements(peopleList);   
+	       /*Populate the list*/
+	       for (Valuelist item : peopleList) {   
+	     	    indValue.add(item.getName());  
+	       }
+	       
+	       System.out.println(indValue);
+	       /*Create menus*/
+	       int i = 0;
+	       for(String item : indValue) {
+	     	  valueitems[i++] =  new MenuItem(item);
+	       }
+	       
 	         /*Disable the default context menu*/
 	         browser.setContextMenuEnabled(false);
 	         
@@ -129,9 +162,31 @@ public class MainSceneController implements Initializable {
 	                                      browser.getEngine().executeScript("doCallbackText()");
 	                                      iclick = false;
 	                                    });
-	      	       
+	       /*Item click eventò*/
+		   for (MenuItem item : valueitems) {
+	         if (item != null) item.setOnAction(e -> { System.out.println(item.getText());
+	         										   answer = item.getText();                
+	         							    		   /*Here we assign id svg to the collection*/
+	         							    		   if (answer != "Finish" && answer != null ) { 
+	         							    			   for (Valuelist items1 : peopleList) {   
+	         							    				  if(items1.getName().equals(answer)) {
+	         							    					  answer = answer + " = " + items1.getId();
+	         	         							    		  browser.getEngine().executeScript("doCallbackText()");
+	         							    					  items1.setIdSVG(answer_id_svg);
+	         							    				  }
+	         							    			   }
+	         							    			  System.out.println(peopleList);	    
+	         							    		   }
+	         							    		   iclick = false;
+	         										    });
+	         else break; 
+	       }
 	       contextMenu.getItems().addAll(reload, test);
 	       contextMenu2.getItems().addAll(CallbackText);
+	       for (MenuItem item : valueitems) {
+	         if (item != null) contextMenu2.getItems().addAll(item);
+	         else break; 
+	       }
 	        	       
 	       webView.setOnMousePressed(e -> {    	   
 	           if (e.getButton() == MouseButton.SECONDARY) {
@@ -147,7 +202,6 @@ public class MainSceneController implements Initializable {
 	       });
 	   }
 	   
-	  
 	  /*Fade loading window animation*/ 
 	  private void loadSplashScreen() {
 	        try {
