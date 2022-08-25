@@ -16,3 +16,7 @@ The project consists:
  
   - Step 5 - Adding global variables, collections for displaying diagnostic parameters on the graphical interface.(https://www.ap-impulse.com/java-collection-for-diagnostic-software-step-109/) 
 <img src="https://www.ap-impulse.com/wp-content/uploads/2022/02/programdiagnostic.gif" width="250"> 
+
+  - Step 6 - Layouts JavaFX and CSS on example.Scaling correction AnchorPane.(https://www.ap-impulse.com/layouts-javafx-and-css-on-example-step-110/)
+  <img src="https://www.ap-impulse.com/wp-content/uploads/2022/08/Style.png" width="250"> 
+  
