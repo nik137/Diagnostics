@@ -3,8 +3,8 @@ https://www.facebook.com/shpuryka
 # Diagnostics - Remote data access and analysis
 The project consists:
   - Step1 - svg animation in web and android as splash screen (https://www.ap-impulse.com/animaciya-svg-dlya-web-i-android-splash-screen-shag-105/)
-
 <img src="https://www.ap-impulse.com/wp-content/uploads/2021/11/android_switch_string.svg" width="250">
+
   - Step2 - splash screen for a desktop application in JavaFX (https://www.ap-impulse.com/splash-screen-and-javafx-statya-106/)
 <img src="https://www.ap-impulse.com/wp-content/uploads/2021/12/splash.jpg" width="250">
 
@@ -13,3 +13,10 @@ The project consists:
  
   - Step 4 - Adding a menu and context menu to an application. Their processing. Nesting fxml files.(https://www.ap-impulse.com/java-fx-menu-nested-fxml-step-108/)
 <img src="https://www.ap-impulse.com/wp-content/uploads/2022/02/Menu.jpg" width="250"> 
+ 
+  - Step 5 - Adding global variables, collections for displaying diagnostic parameters on the graphical interface.(https://www.ap-impulse.com/java-collection-for-diagnostic-software-step-109/) 
+<img src="https://www.ap-impulse.com/wp-content/uploads/2022/02/programdiagnostic.gif" width="250"> 
+
+  - Step 6 - Layouts JavaFX and CSS on example.Scaling correction AnchorPane.(https://www.ap-impulse.com/layouts-javafx-and-css-on-example-step-110/)
+  <img src="https://www.ap-impulse.com/wp-content/uploads/2022/08/Style.png" width="250"> 
+  
