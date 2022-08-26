@@ -22,6 +22,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContextMenu;
+import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.AnchorPane;
@@ -79,6 +80,9 @@ public class MainSceneController implements Initializable {
 		   return Integer.toString(answer_id);
        }
    }
+    
+    /*Label for periodic output of any information*/
+    private @FXML Label timerNumber;   
    
     @FXML
 	private AnchorPane rootMain;

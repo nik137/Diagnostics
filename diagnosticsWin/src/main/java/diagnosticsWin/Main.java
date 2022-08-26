@@ -16,6 +16,8 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/main.fxml"));
         /*Displays the contents of the stage (stage)*/
         Scene scene = new Scene(root);
+        /*Adding a style to the app's background*/
+        scene.getStylesheets().add(getClass().getResource("/ApplicationStyle.css").toExternalForm());
         /*Loading components into the window*/
         stage.setScene(scene); 
         stage.setTitle("Genuine Coder"); 

@@ -7,17 +7,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.web.*?>
 
-<AnchorPane fx:id="rootMain" prefHeight="622.0" prefWidth="797.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="diagnosticsWin.MainSceneController">
+<AnchorPane fx:id="rootMain" focusTraversable="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="diagnosticsWin.MainSceneController">
    <children>
-     <AnchorPane id="AnchorPane" fx:id="root"  prefHeight="613.0" prefWidth="783.0">
-        <children>
-            <WebView fx:id="browser"  prefHeight="613.0" prefWidth="783.0">
-               <cursor>
-                  <Cursor fx:constant="NW_RESIZE" />
-               </cursor>
-            </WebView>
-            <fx:include source="menu.fxml" /> 
-        </children>
-      </AnchorPane>
+       <AnchorPane id="AnchorPane" fx:id="root" focusTraversable="true" layoutX="1.0" layoutY="-1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"> 
+            <children>   
+              <WebView fx:id="browser" layoutX="-1.0" layoutY="25.0" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+                  <cursor>
+                     <Cursor fx:constant="NW_RESIZE" />
+                  </cursor>
+               </WebView> 
+               <fx:include source="Menu.fxml" />
+               <Label fx:id="timerNumber" layoutX="769.0" layoutY="6.0" text="Label" styleClass="timerNumber" stylesheets="@/LabelStyle.css" /> 
+             </children>
+         </AnchorPane>
    </children>
 </AnchorPane>
+
