@@ -3,7 +3,9 @@ package diagnosticsWin;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -13,8 +15,11 @@ import java.util.logging.Logger;
 import com.sun.javafx.webkit.WebConsoleListener;
 
 import javafx.animation.FadeTransition;
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.concurrent.ScheduledService;
+import javafx.concurrent.Task;
 import javafx.concurrent.Worker;
 import javafx.concurrent.Worker.State;
 import javafx.fxml.FXML;
@@ -83,6 +88,9 @@ public class MainSceneController implements Initializable {
     
     /*Label for periodic output of any information*/
     private @FXML Label timerNumber;   
+    
+    
+    
    
     @FXML
 	private AnchorPane rootMain;
@@ -101,6 +109,10 @@ public class MainSceneController implements Initializable {
 	            loadSplashScreen();        
 	        }
 	        
+	        //To output to timestamp cyclically
+	        UpdateLabel service = new UpdateLabel(timerNumber);
+	        service.setPeriod(Duration.seconds(5)); // The interval between executions.
+	        service.start();
 
 	       /*Get the "WebEngine" object from the "WebView" using the "getEngine()" method*/
 	       webEngine = browser.getEngine(); 
@@ -257,6 +269,30 @@ public class MainSceneController implements Initializable {
 	    private void buttonClicked() {
 	        mainButton.setText("Click me again!");
 	     }  
+	    
+	    
+	    /*A class that extends a flow control service. Accepts a label in the graphic element constructor.
+	      Has a runnable task to display the time/update of an element after a given time.*/
+	    class UpdateLabel extends ScheduledService<Void> {
+	    	private Label label;
+	        public UpdateLabel(Label label){
+	    	    this.label = label;
+	        }
+			@Override
+	    	protected Task<Void> createTask(){
+	    	    return new Task<Void>(){
+	    	        @Override
+	    	        protected Void call(){
+	    	            Platform.runLater(() -> {
+	    	            	Calendar time = Calendar.getInstance();
+	    	            	SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss");
+	    	            	label.setText(simpleDateFormat.format(time.getTime()));
+	    	            });
+	    	            return null;
+	    	        }
+	    	    };
+	    	}
+	    }
 }
 
  
