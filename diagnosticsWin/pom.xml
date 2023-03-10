@@ -3,4 +3,14 @@
   <groupId>ap-impulse.com</groupId>
   <artifactId>diagnosticsWin</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  <dependencies>
+<!-- Other dependencies... -->
+	<dependency>
+		<groupId>org.xerial</groupId>
+		<artifactId>sqlite-jdbc</artifactId>
+    	<version>3.39.2.0</version>
+	</dependency>
+  </dependencies>	
+  
 </project>

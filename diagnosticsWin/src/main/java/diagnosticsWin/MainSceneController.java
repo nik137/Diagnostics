@@ -13,7 +13,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.sun.javafx.webkit.WebConsoleListener;
-
 import javafx.animation.FadeTransition;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
@@ -25,17 +24,22 @@ import javafx.concurrent.Worker.State;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import netscape.javascript.JSObject;
+import javafx.scene.control.Alert;
 
 /*"restriction" restriction to suppress warnings about the use of deprecated or prohibited links*/
 @SuppressWarnings("restriction")
@@ -167,17 +171,46 @@ public class MainSceneController implements Initializable {
 	   private void createContextMenu(WebView webView) {
 	       ContextMenu contextMenu = new ContextMenu();
 	       ContextMenu contextMenu2 = new ContextMenu();
+	       
 	       MenuItem reload = new MenuItem("Reload");
 	       reload.setOnAction(e -> webView.getEngine().reload());
+	       
 	       MenuItem test = new MenuItem("Test executeScript ");
 	       test.setOnAction(e ->{ System.out.println("Test executeScript");
 	                              browser.getEngine().executeScript("GreenPath()");
 	                            });
+	       
 	       MenuItem CallbackText = new MenuItem("CallbackText");
 	       CallbackText.setOnAction(e ->{ System.out.println("CallbackText");
 	                                      browser.getEngine().executeScript("doCallbackText()");
 	                                      iclick = false;
 	                                    });
+	       
+	       MenuItem dataBase = new MenuItem("Database");
+	       dataBase.setOnAction(e -> { 	   								
+	    	   if (Database.isOK()) {  
+						Stage newStage = new Stage();
+				        Parent rootDatabase;
+					try {
+						rootDatabase = FXMLLoader.load(getClass().getResource("/sqLiteView.fxml"));
+					    Scene scene = new Scene(rootDatabase); // Scene отображает содержание сцены (stage)  
+					        newStage.setScene(scene); // загружаем компоненты в окно
+					        newStage.setTitle("Database"); 
+					        newStage.show(); // С помощью метода show объект Stage отображается на экране устройства.  
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+	           } else {	        	   
+	               Alert alert = new Alert(AlertType.ERROR);
+	   			   alert.setTitle("Database error");
+	   			   alert.setHeaderText("Could not load database");
+	   			   alert.setContentText("Error loading SQLite database. See log. Quitting");
+	   			   alert.showAndWait();
+	               Platform.exit(); 
+	           }
+	       							});
+	       
 	       /*Item click eventт*/
 		   for (MenuItem item : valueitems) {
 	         if (item != null) item.setOnAction(e -> { System.out.println(item.getText());
@@ -197,7 +230,7 @@ public class MainSceneController implements Initializable {
 	         										    });
 	         else break; 
 	       }
-	       contextMenu.getItems().addAll(reload, test);
+	       contextMenu.getItems().addAll(reload, test, dataBase);
 	       contextMenu2.getItems().addAll(CallbackText);
 	       for (MenuItem item : valueitems) {
 	         if (item != null) contextMenu2.getItems().addAll(item);

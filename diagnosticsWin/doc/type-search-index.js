@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"diagnosticsWin","l":"Main"}]

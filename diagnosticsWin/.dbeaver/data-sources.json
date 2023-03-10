@@ -1,0 +1,31 @@
+{
+	"folders": {},
+	"connections": {
+		"sqlite_jdbc-186c6e09aee-5baf06568dd273ce": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "database.db",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"database": "C:\\eclipse_prj\\diagnosticsWin\\src\\main\\resources\\database.db",
+				"url": "jdbc:sqlite:C:\\eclipse_prj\\diagnosticsWin\\src\\main\\resources\\database.db",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}
