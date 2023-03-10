@@ -20,6 +20,6 @@ The project consists:
   - Step 6 - Layouts JavaFX and CSS on example.Scaling correction AnchorPane.(https://www.ap-impulse.com/layouts-javafx-and-css-on-example-step-110/)
   <img src="https://www.ap-impulse.com/wp-content/uploads/2022/08/Style.png" width="250"> 
   
-  - Step 7 - Work with streams. Creation and launch. Using the example of a pool of threads and their scheduler, we update the user interface, using the example of displaying time. (https://www.ap-impulse.com/post_en/sreating-and-managing-threads-in-java-fx-with-examples-step-no-111/?l=en_EN)
+  - Step 7 - Work with streams. Creation and launch. Using the example of a pool of threads and their scheduler, we update the user interface, using the example of displaying time. (https://www.ap-impulse.com/sreating-and-managing-threads-in-java-fx-with-examples-step-111/?l=en_EN)
   <img src="https://www.ap-impulse.com/wp-content/uploads/2023/02/Diagnostics.jpg" width="250">
   
