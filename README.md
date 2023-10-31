@@ -23,3 +23,5 @@ The project consists:
   - Step 7 - Work with streams. Creation and launch. Using the example of a pool of threads and their scheduler, we update the user interface, using the example of displaying time. (https://www.ap-impulse.com/sreating-and-managing-threads-in-java-fx-with-examples-step-111/?l=en_EN)
   <img src="https://www.ap-impulse.com/wp-content/uploads/2023/02/Diagnostics.jpg" width="250">
   
+  - Step 8 - Integration of SQLite JDBC driver and library for JavaFX. Connection to the database program and interaction with the user through tables.  (https://www.ap-impulse.com/sqlite-jdbc-for-javafx-dbeaver-step-112/?l=en_EN)
+  <img src="https://www.ap-impulse.com/wp-content/uploads/2023/03/ApplicationWithDB.jpg" width="250">
