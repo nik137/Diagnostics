@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Spring boot Table Operations</title>
+		<link rel="stylesheet" th:href="@{/css/table.css}" />
+	</head>
+	<body class="align">
+		<table id="example" class="table table-bordered" style="width: 100%">
+			<thead>
+				<tr>
+					<th>numberElement</th>
+					<th>valueElement</th>
+					<th>nameElement</th>
+					<th>numberSvgElement</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="ValueList: ${valueList}">
+					<td th:text="${ValueList.id_element}"></td>
+					<td th:text="${ValueList.value}"></td>
+					<td th:text="${ValueList.name}"></td>
+					<td th:text="${ValueList.id_svg}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+	<a href="function.svg"><img class="alignleft size-full wp-image-2811" title="function" src="function.svg" alt="" />
+</html>
