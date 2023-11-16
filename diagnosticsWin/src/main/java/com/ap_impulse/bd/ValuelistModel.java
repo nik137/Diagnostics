@@ -1,4 +1,4 @@
-package com.ap_impulse;
+package com.ap_impulse.bd;
 
 import javafx.beans.property.FloatPropertyBase;
 import javafx.beans.property.ReadOnlyFloatProperty;

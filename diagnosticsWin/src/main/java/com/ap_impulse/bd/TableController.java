@@ -1,4 +1,4 @@
-package com.ap_impulse;
+package com.ap_impulse.bd;
 
 import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
@@ -16,6 +16,8 @@ import javafx.stage.Stage;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.function.UnaryOperator;
+
+import com.ap_impulse.Main;
 
 /*�������� ������� ��� ���������� ��. ���������*/
 

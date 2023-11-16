@@ -1,4 +1,4 @@
-package com.ap_impulse;
+package com.ap_impulse.bd;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import com.ap_impulse.Main;
 
 
 /* ���� ������������, ���������� ��������, ������ �������� � ��, ��������� �������� �������.

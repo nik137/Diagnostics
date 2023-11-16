@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 
 import org.springframework.stereotype.Component;
 
+import com.ap_impulse.bd.Database;
 import com.sun.javafx.webkit.WebConsoleListener;
 
 import javafx.animation.FadeTransition;
@@ -125,7 +126,7 @@ public class MainSceneController implements Initializable {
 
 	       /*Get the "WebEngine" object from the "WebView" using the "getEngine()" method*/
 	       webEngine = browser.getEngine(); 
-	       URL url = getClass().getResource("/function.svg");
+	       URL url = getClass().getResource("/static/function.svg");
 	       webEngine.load(url.toExternalForm()); 
 	       
 	       /* getLoadWorker - Returns a "Worker" object that tracks the progress of loading. After that, we set the "JSObject"

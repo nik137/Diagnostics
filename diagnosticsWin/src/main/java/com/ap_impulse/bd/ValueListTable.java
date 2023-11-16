@@ -1,4 +1,4 @@
-package com.ap_impulse;
+package com.ap_impulse.bd;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -16,14 +16,30 @@
    height="793.33331"
    viewBox="0 0 1122.6667 793.33331"
    sodipodi:docname="function.svg"
-   inkscape:version="0.92.1 r15371"><defs
-     id="defs12"><script
-       id="script10"> 
+   inkscape:version="0.92.1 r15371">
+   <defs id="defs12">
+	 <script href="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.0.0/bundles/stomp.umd.min.js" ></script>
+	 <script id="script10"> 
 		
 		/*По событию клик вызываем функцию и выводим номер элемента, над которым произошло событие.*/
 		document.getElementById('Capa_1').addEventListener('click' , function(e){ 
 			var target = e.target.id;
 			console.log(target); <!-- Выводим id элемента в консоль хрома и слушаем приложением-->
+			
+			if (e.target.id == 'connectStartName' ){
+				console.log("connect");
+				connect();
+			}
+   
+			if (e.target.id == 'connectStopName' ){
+				console.log("disconnect");
+				disconnect();
+			}
+		
+			if (e.target.id == 'connectDataName' ){
+				console.log("Data - log");
+				connectData();
+			}
 		});
 
 		/*Для теста. Вызов функции непосредственно из java приложения.*/
@@ -37,11 +53,60 @@
 		  Далее вызывает функции моста в приложении java (j,hfnysq dspjd)   */
 		function doCallbackText() {
 			var SVG = document.getElementById('Capa_1');
-			var path = bridge.elementId();   // читаем из джавы
+			var path = bridge.elementId();   
 			var path1 = bridge.elementIdText();
 			if (path1!= &quot;Finish&quot;) SVG.getElementById(path).textContent = path1; 
 			console.log(path1+&quot;Вставляю текст&quot;); 
 		}
+		
+		<!-- STOMP -->
+        const stompClient = new StompJs.Client({
+			brokerURL: 'ws://localhost:8080/chat-websocket'
+		});
+
+		stompClient.onConnect = (frame) => {
+			console.log('Connected: ' + frame);
+			stompClient.subscribe('/topic/answers', (answer) => {	
+			showAnswer(JSON.parse(answer.body));        
+			});
+		}
+
+		stompClient.onWebSocketError = (error) => {
+			console.error('Error with websocket', error);
+		}
+
+		stompClient.onStompError = (frame) => {
+			console.error('Broker reported error: ' + frame.headers['message']);
+			console.error('Additional details: ' + frame.body);
+		}
+
+		function connect() {
+			stompClient.activate();
+			document.getElementById("status").textContent = "Статус:Так"
+		}
+
+		function disconnect() {
+			stompClient.deactivate();
+			console.log("Disconnected");
+			document.getElementById("status").textContent = "Статус:Ні"
+		}
+	  
+	    function connectData() {  
+		  var Nzad = document.getElementById("N#").textContent;		
+		  stompClient.publish({
+            destination: "/app/answer", 
+		    body: JSON.stringify({'name': Nzad,  
+			                      'text':"Hello!" })
+          });
+		  console.log(JSON);
+		}
+	  
+	    function showAnswer(message) {
+		  console.log(message.name);
+		  console.log(message.text);
+		  console.log(message.time);
+		  document.getElementById("statusData").textContent = "Статус:Так"
+      }
 
   </script></defs><metadata
      id="metadata16"><rdf:RDF><cc:Work
@@ -1743,4 +1808,28 @@
          x="661.27179"
          y="82.383659"
          style="stroke-width:0.76545459" /></text>
-</g></svg>
+</g>
+ <!-- Кнопки --> 
+		 <g>
+		   <rect x="440" y="375" width="95" height="20" rx="5" id="connectStart" style="fill:rgb(0,255,255);stroke-width:3;stroke:rgb(0,0,0)"/>
+		   <text x="445" y="390" font-family="Verdana" font-size="15" id="connectStartName" fill="red">З'єднання</text> 
+		 </g>
+		 
+		 <g>
+		   <rect x="550" y="375" width="95" height="20" rx="5" id="connectStop" style="fill:rgb(0,255,255);stroke-width:3;stroke:rgb(0,0,0)"/>
+		   <text x="555" y="390" font-family="Verdana" font-size="15" id="connectStopName" fill="red">Роз'днання</text> 
+		 </g>
+		 
+		 <g>
+		   <rect x="440" y="350" width="115" height="20" rx="5" id="connectData" style="fill:rgb(0,255,255);stroke-width:3;stroke:rgb(0,0,0)"/>
+		   <text x="445" y="365" font-family="Verdana" font-size="15" id="connectDataName" fill="red">Обмін даними</text> 
+		 </g>
+		 
+		 <!-- Інформативні поля -->
+		 <text x="560" y="365" font-family="Verdana" font-size="15" fill="blue" id="statusData">Статус:Ні</text> 
+		 <text x="650" y="390" font-family="Verdana" font-size="15" fill="blue" id="status">Статус:Ні</text> 
+		 
+		 <!--  Компоненти індикації -->
+		 <text x="30" y="115" font-family="Verdana" font-size="10" fill="black" id="N#" style="stroke-width:0.5;stroke:rgb(0,0,0)">N#=34</text> 
+ 
+</svg>

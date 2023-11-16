@@ -7,8 +7,23 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import javafx.application.Application;
+import com.ap_impulse.bd.ValuelistModel;
 
+import javafx.application.Application;
+/**
+* Diagnostics. Перегляд та аналіз даних. 
+* <p>
+* Перегляд та аналіз даних. 
+* <p><p>
+* <p>
+* 
+* <pre>
+* </pre>
+* 
+* @param  nothing
+* @return nothing
+* @author Shpuriaka Oleksandr
+*/
 @SpringBootApplication
 public class DiagnosticsWinApplication implements CommandLineRunner {
 	@Autowired
