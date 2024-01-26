@@ -12,8 +12,14 @@
 	<name>diagnosticsWin</name>
 	<description>Project for Spring Boot</description>
   
-  <properties>
+    <properties>
 		<java.version>17</java.version>
+		<javax.websocket-api.version>1.1</javax.websocket-api.version>
+        <gson.version>2.8.0</gson.version>
+        <nd4j.backend>nd4j-native</nd4j.backend>
+        <dl4j-master.version>1.0.0-M2.1</dl4j-master.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -83,6 +89,56 @@
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-web</artifactId>
 			<version>22-ea+9</version>
+		</dependency>
+		
+		  <!-- for mashine learning dl4j -->
+        <dependency>
+      		<groupId>org.nd4j</groupId>
+      		<artifactId>${nd4j.backend}</artifactId>
+      		<version>${dl4j-master.version}</version>
+    	</dependency>
+     	<dependency>
+            <groupId>org.deeplearning4j</groupId>
+            <artifactId>deeplearning4j-datasets</artifactId>
+            <version>${dl4j-master.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.deeplearning4j</groupId>
+            <artifactId>deeplearning4j-core</artifactId>
+            <version>${dl4j-master.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.deeplearning4j</groupId>
+            <artifactId>resources</artifactId>
+            <version>${dl4j-master.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.deeplearning4j</groupId>
+            <artifactId>deeplearning4j-ui</artifactId>
+            <version>${dl4j-master.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.deeplearning4j</groupId>
+            <artifactId>deeplearning4j-zoo</artifactId>
+            <version>${dl4j-master.version}</version>
+        </dependency>
+        <!-- ParallelWrapper & ParallelInference live here -->
+        <dependency>
+            <groupId>org.deeplearning4j</groupId>
+            <artifactId>deeplearning4j-parallel-wrapper</artifactId>
+            <version>${dl4j-master.version}</version>
+        </dependency>
+        <dependency>
+    		<groupId>org.deeplearning4j</groupId>
+    		<artifactId>deeplearning4j-scaleout-akka</artifactId>
+    		<version>0.0.3.3</version>
+		</dependency>
+        <dependency>
+			<groupId>org.deeplearning4j</groupId>
+			<artifactId>deeplearning4j-nn</artifactId>
+			<version>1.0.0-M2.1</version>
 		</dependency>
 	</dependencies>
 

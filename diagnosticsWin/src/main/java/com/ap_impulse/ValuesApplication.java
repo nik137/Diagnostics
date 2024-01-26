@@ -1,6 +1,7 @@
 /*Storing data while the application is running.*/
 package com.ap_impulse;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Objects;
 
@@ -9,6 +10,15 @@ import java.util.Objects;
  */
 
 public class ValuesApplication {   
+	
+	// For data from web
+	public static Collection<Valuelist> componentValueList =  new ArrayList<>(); 
+	
+	// Constructor
+	ValuesApplication(){
+		    System.out.println(" --- Constructor ValuesApplication: created collection --- ");
+		    	addElements(componentValueList); //заповнюємо статичну колекцію
+    }
    
     /*private static - a field common to all instances of the class, which can only be accessed from the methods of this class.*/
     private static Float r_Z_SkMax_M = (float) 0.0;        
@@ -34,13 +44,22 @@ public class ValuesApplication {
 		collection.clear();
 	}
     
+    // 1 - порядковий номер компоненти, r_Z_SkMax_M - сама зміна в системі, N#-max'-' - назва компоненти , а також її id на веб
+    // "null" - резерв 
     public void addElements(Collection<Valuelist> collection) {		
-		collection.add(new Valuelist(1,r_Z_SkMax_M, "N#-max'+'", "null"));
-		collection.add(new Valuelist(2,r_Z_SkMax_P, "N#-min'-'", "null"));
-		collection.add(new Valuelist(3,ZSkA, "N#A", "null"));
-		collection.add(new Valuelist(4,Z_Skor, "N#", "null"));
-		collection.add(new Valuelist(5,Skor, "N", "null"));
+		collection.add(new Valuelist(1    ,r_Z_SkMax_M       	    ,"N#-макс'-'"       		,"null"    			));
+		collection.add(new Valuelist(2    ,r_Z_SkMax_P        		,"N#-макс'+'"       		,"null"    			));
+		collection.add(new Valuelist(3    ,ZSkA               		,"N#A"             			,"null"    			));
+		collection.add(new Valuelist(4    ,Z_Skor             		,"N#"              			,"null"    			));
+		collection.add(new Valuelist(5    ,Skor              	    ,"N"               			,"null"    			));
+		collection.add(new Valuelist(6    ,r_Mashtab_ZSkA     		,"N#-масштаб"      			,"null"    			));
+		collection.add(new Valuelist(7    ,r_T_ZISkorP_Torm   		,"ТемпЗІ-РШ'-'"          	,"null"    			));
+		collection.add(new Valuelist(8    ,r_T_ZISkorP_Fors   		,"ТемпЗІ-РШ's'"          	,"null"    			));
+		collection.add(new Valuelist(9    ,r_T_ZISkorP_Razg   		,"ТемпЗІ-РШ'+'"          	,"null"    			));
+		collection.add(new Valuelist(10   ,ZISkor           		,"N#R"              	    ,"null"    			));
+	
 	}
+	
 	
     public Float getZSkA() {return ZSkA;}
     public void setZSkA(Float ZSkA) {this.ZSkA = ZSkA;}
@@ -96,7 +115,7 @@ public class ValuesApplication {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("\n N#R:" + this.getZISkor());
+        sb.append("\n N#R:" + getZISkor());
         return sb.toString();
     }    
 }
@@ -150,9 +169,14 @@ class Valuelist implements Comparable<Valuelist>{
 		return "Valuelist [id_element=" + id_element + ", id=" + id + ", name=" + name +  ", id_svg=" + id_svg +"]";
 	}
 	
-	public String getId() {
-		return Float.toString(id);
+	public Float getId() {
+		return id;
 	}
+	
+	public void setId(Float id) {
+		this.id = id;
+	}
+	
 
 	@Override
 	public int hashCode() {
@@ -182,9 +206,9 @@ class Valuelist implements Comparable<Valuelist>{
 	@Override
 	public int compareTo(Valuelist o) {  
 		// TODO Auto-generated method stub
-		if(this.name.length() > o.getName().length()) {         
+		if(name.length() > o.getName().length()) {         
 					return 1;
-		}else if(this.name.length() < o.getName().length()){     
+		}else if(name.length() < o.getName().length()){     
 	    	return -1;
 	    }else {
 	    	return 0;
