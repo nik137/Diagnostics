@@ -26,5 +26,8 @@ The project consists:
   - Step 8 - Integration of SQLite JDBC driver and library for JavaFX. Connection to the database program and interaction with the user through tables.  (https://www.ap-impulse.com/sqlite-jdbc-for-javafx-dbeaver-step-112/?l=en_EN)
   <img src="https://www.ap-impulse.com/wp-content/uploads/2023/03/ApplicationWithDB.jpg" width="250">
 
- - Step 9 - Integration of Spring Boot, JavaFx, Thymeleaf, SQLite. Access to the database both from the desktop and from the web application.  (https://www.ap-impulse.com/spring-boot-javafx-thymeleaf-sqlite-step-116/)
-  <img src="https://www.ap-impulse.com/wp-content/uploads/2023/10/spring_project.jpg" width="250">
+ - Step 9 - Integration of Spring Boot, JavaFx, Thymeleaf, SQLite. Access to the database both from the desktop and from the web application. (https://www.ap-impulse.com/spring-boot-javafx-thymeleaf-sqlite-step-116/)
+   <img src="https://www.ap-impulse.com/wp-content/uploads/2023/10/spring_project.jpg" width="250">
+   
+ - Step 10 - Integration of the protocol STOMP for data transmission/reception between the server and the client. Settings SpringBoot and SVG with javascript.(https://www.ap-impulse.com/stomp-spring-boot-step-118/)
+   <img src="https://www.ap-impulse.com/wp-content/uploads/2023/11/WebSocketSTOMP.png" width="250">
