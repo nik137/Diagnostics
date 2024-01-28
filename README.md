@@ -31,3 +31,7 @@ The project consists:
    
  - Step 10 - Integration of the protocol STOMP for data transmission/reception between the server and the client. Settings SpringBoot and SVG with javascript.(https://www.ap-impulse.com/stomp-spring-boot-step-118/)
    <img src="https://www.ap-impulse.com/wp-content/uploads/2023/11/WebSocketSTOMP.png" width="250">
+
+   - Step 11 - Deeplearning4j integration for NLP. To use semantic search in the project. Namely, the answer to the client's request for an element of the interface scheme.(https://www.ap-impulse.com/dl4j-doc2vec-java-step-123/)
+   
+
