@@ -5,7 +5,7 @@ https://www.facebook.com/shpuryka
 An example of a full-stack project in the form of a software complex consisting of a front-end part on the client side (web), consisting of SVG, CSS, html and javascript, and a back-end part in the form of parallel operation of the server and desktop application and consists of from the following frameworks: JavaFX, SpringBoot, JDBC, MySql, Thymeleaf, Deeplearning4j, with support for WebSocket, STOMP and JSON objects.
 Below is a link to the description and screenshot.
 https://www.ap-impulse.com/full-stack-proekt-skladovi-step-124/
-<img src="https://www.ap-impulse.com/wp-content/uploads/2024/01/DiagnosticsCompleks.jpg" width="250">
+<img src="https://www.ap-impulse.com/wp-content/uploads/2024/01/DiagnosticsCompleks.jpg" width="500">
 
 The project consists:
   - Step1 - svg animation in web and android as splash screen (https://www.ap-impulse.com/animaciya-svg-dlya-web-i-android-splash-screen-shag-105/)
