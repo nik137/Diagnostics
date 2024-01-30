@@ -39,5 +39,6 @@ The project consists:
    <img src="https://www.ap-impulse.com/wp-content/uploads/2023/11/WebSocketSTOMP.png" width="250">
 
  - Step 11 - Deeplearning4j integration for NLP. To use semantic search in the project. Namely, the answer to the client's request for an element of the interface scheme.(https://www.ap-impulse.com/dl4j-doc2vec-java-step-123/)
+    <img src="https://www.ap-impulse.com/wp-content/uploads/2024/01/NLPDiagnostics.png" width="250">
    
 
